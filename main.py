@@ -4,16 +4,16 @@ from split_audio import PrepocessData
 from extract_feature import mfccAlg
 
 # CREATE TRAIN MODEL
-# Replace 'your_audio_file.wav' with the path to your audio file
+
+audioDirPath = "Song"
+
+# List all audio files in the directory
+audio_files = [os.path.join(audioDirPath, file) for file in os.listdir(
+    audioDirPath) if file.endswith('.wav')]
+
 audioFilePath = 'Song/Hindia-Cincin.wav'
 # Segment length in seconds (4 seconds)
 segmentLengthSec = 4
-
-# Output folder path
-output_folder = 'output_folder'
-
-# Create the output folder if it doesn't exist
-os.makedirs(output_folder, exist_ok=True)
 
 # initial pandas
 df = pd.DataFrame()
